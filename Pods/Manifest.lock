@@ -1,0 +1,20 @@
+PODS:
+  - GPUImage (0.1.7)
+  - Toast (4.0.0)
+
+DEPENDENCIES:
+  - GPUImage (~> 0.1.7)
+  - Toast (~> 4.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - GPUImage
+    - Toast
+
+SPEC CHECKSUMS:
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+
+PODFILE CHECKSUM: 68480d05c75beaf71f1575d0a810b3da48aab38e
+
+COCOAPODS: 1.5.3

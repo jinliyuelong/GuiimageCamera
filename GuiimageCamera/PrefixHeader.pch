@@ -1,0 +1,42 @@
+//
+//  PrefixHeader.pch
+//  GuiimageCamera
+//
+//  Created by Liyanjun on 2018/12/25.
+//  Copyright © 2018 hand. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define RGBA_COLOR(R, G, B, A) [UIColor colorWithRed:((R) / 255.0f) green:((G) / 255.0f) blue:((B) / 255.0f) alpha:A]
+#define RGB_COLOR(R, G, B) [UIColor colorWithRed:((R) / 255.0f) green:((G) / 255.0f) blue:((B) / 255.0f) alpha:1.0f]
+
+#define RGBFromColor(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
+#define ScreenWidth             [[UIScreen mainScreen] bounds].size.width
+#define ScreenHeight            [UIScreen mainScreen].bounds.size.height
+//判断iPhoneX系列
+#define IS_IPHONE_Xseries \
+({BOOL isPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+}\
+(isPhoneX);})
+
+//iPhoneX系列
+#define Height_StatusBar (IS_IPHONE_Xseries ? 44.0 : 20.0)
+#define Height_NavBar (IS_IPHONE_Xseries ? 88.0 : 64.0)
+#define Height_TabBar (IS_IPHONE_Xseries ? 83.0 : 49.0)
+
+#define SafeAreaTopHeight (IS_IPHONE_Xseries ? 88 : 64)
+#define SafeAreaBottomHeight (IS_IPHONE_Xseries ? 34 : 0)
+#define SafeAreaTopNoNavHeight (IS_IPHONE_Xseries ? 34 : 0)
+
+#import "UIView+Common.h"
+#import "Toast.h"
+#endif /* PrefixHeader_pch */
